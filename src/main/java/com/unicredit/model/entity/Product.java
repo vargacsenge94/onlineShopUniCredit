@@ -1,4 +1,4 @@
-package com.unicredit.entity;
+package com.unicredit.model.entity;
 
 import lombok.Data;
 
@@ -14,10 +14,7 @@ public class Product {
     private Long id;
 
     private String name;
-
-    @OneToMany(
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
+    private boolean isValid;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PricePerDay> pricePerDays;
 }

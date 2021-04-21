@@ -28,3 +28,5 @@ Development steps:
 8. Revise performance
 9. Dockerize app
 
+Extra: make exhange rate per day
+

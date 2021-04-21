@@ -1,4 +1,4 @@
-package com.unicredit.serive;
+package com.unicredit.service;
 
 public class ProductServiceTest {
 }

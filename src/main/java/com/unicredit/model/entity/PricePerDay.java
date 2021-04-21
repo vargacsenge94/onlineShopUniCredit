@@ -1,21 +1,21 @@
-package com.unicredit.entity;
+package com.unicredit.model.entity;
 
-import com.unicredit.model.Currency;
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 @Data
-public class ExchangeRate {
+public class PricePerDay {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long value;
-    private Currency currency;
+    private Date date;
+    private Long price; //in EUR
 }

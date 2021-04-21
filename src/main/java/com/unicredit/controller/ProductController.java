@@ -10,22 +10,28 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class ShopController {
+@RequestMapping("/product")
+public class ProductController {
 
     private ProductService productService;
     private DozerBeanMapper mapper;
 
-    @PostMapping
-    public @ResponseBody Product saveProduct(@RequestBody SaveProductDTO product) {
-
-        return productService.insertProduct(mapper.map(product, Product.class));
+    @GetMapping("/id")
+    public Product getProduct(@PathVariable Long id) {
+        return productService.getProduct(id);
     }
 
     @GetMapping
-    public @ResponseBody
-    List<Product> getAllProducts () {
+    public List<Product> getProducts() {
         return productService.getAllProducts();
     }
+
+    @PostMapping
+    public Product addProduct(@RequestBody SaveProductDTO product) {
+        //todo add validations for product
+        return productService.insertProduct(mapper.map(product, Product.class));
+    }
+
 
     @Autowired
     public void setProductService(ProductService productService) {

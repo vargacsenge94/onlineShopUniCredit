@@ -1,6 +1,6 @@
-package com.unicredit.entity.dto;
+package com.unicredit.model.dto;
 
-import com.unicredit.entity.PricePerDay;
+import com.unicredit.model.entity.PricePerDay;
 import lombok.Data;
 
 import java.util.List;
@@ -9,5 +9,6 @@ import java.util.List;
 public class SaveProductDTO {
 
     private String name;
+    private boolean isValid;
     private List<PricePerDay> pricePerDays;
 }
